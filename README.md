@@ -1,4 +1,4 @@
-# gitops-monitoring
+# K8Sgitops-monitoring
 
 Dépôt GitOps pour déployer une stack de monitoring sur K3s avec Argo CD et Helm.
 
