@@ -1,0 +1,43 @@
+kube-prometheus-stack:
+  crds:
+    enabled: true
+
+  grafana:
+    adminPassword: "techflow2025"
+    service:
+      type: ClusterIP
+    persistence:
+      enabled: true
+      size: 2Gi
+
+  prometheus:
+    service:
+      type: ClusterIP
+    prometheusSpec:
+      retention: 15d
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 10Gi
+
+  alertmanager:
+    enabled: true
+    service:
+      type: ClusterIP
+
+  nodeExporter:
+    enabled: true
+
+  kubeStateMetrics:
+    enabled: true
+
+  prometheusOperator:
+    tls:
+      enabled: false
+    admissionWebhooks:
+      enabled: true
+      patch:
+        enabled: true
