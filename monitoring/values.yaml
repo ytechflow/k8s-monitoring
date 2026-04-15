@@ -11,17 +11,17 @@ kube-prometheus-stack:
     service:
       type: ClusterIP
 
-    ingress:
-      enabled: true
-      ingressClassName: nginx
-      hosts:
-        - grafana.sayzx.fr
-      annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
-      tls:
-        - hosts:
-            - grafana.sayzx.fr
-          secretName: grafana-tls
+    # ingress:
+    #   enabled: true
+    #   ingressClassName: nginx
+    #   hosts:
+    #     - grafana.sayzx.fr
+    #   annotations:
+    #     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    #   tls:
+    #     - hosts:
+    #         - grafana.sayzx.fr
+    #       secretName: grafana-tls
 
     persistence:
       enabled: true
