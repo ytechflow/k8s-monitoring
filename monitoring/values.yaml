@@ -3,6 +3,7 @@ kube-prometheus-stack:
     enabled: true
 
   grafana:
+    adminUser: "admin"
     adminPassword: "techflow2025"
 
     envFromSecret: grafana-oauth
@@ -31,7 +32,11 @@ kube-prometheus-stack:
         root_url: https://grafana.sayzx.fr
 
       auth:
+        disable_login: false
         disable_login_form: false
+
+      auth.basic:
+        enabled: true
 
       auth.generic_oauth:
         enabled: true
